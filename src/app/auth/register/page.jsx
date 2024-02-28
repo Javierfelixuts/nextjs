@@ -1,7 +1,6 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { useRouter } from 'next/navigation';
-import Image from "next/image";
 
 function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -123,4 +122,4 @@ function Register() {
     )
 }
 
-export default register
+export default Register
