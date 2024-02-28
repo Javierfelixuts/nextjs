@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 
-function register() {
+function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const router = useRouter()
     const onSubmit = handleSubmit( async(data) => {
