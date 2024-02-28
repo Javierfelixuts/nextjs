@@ -1,8 +1,9 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
-import {useRouter} from 'next/navigation'
-import {useState} from 'react'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import Image from "next/image";
 
 function Login() {
   const {
@@ -12,7 +13,7 @@ function Login() {
   } = useForm();
   const router = useRouter()
   const [error, setError] = useState(null)
-  
+
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
 
@@ -39,7 +40,14 @@ function Login() {
           <p className="bg-red-500 text-lg text-white p-3 rounded mb-2">{error}</p>
         )}
 
-        <h1 className="text-slate-200 font-bold text-4xl mb-4">BANKAPP</h1>
+        <Image
+          alt="bankapp"
+          className="mx-auto"
+          src='/icon-192x192.png'
+          height={50}
+          width={50}
+        />
+        <h1 className="text-slate-200 font-bold text-4xl mb-4 text-center m-2">BANKAPP</h1>
 
         <label htmlFor="email" className="text-slate-500 mb-2 block text-sm">
           Email:
@@ -91,8 +99,8 @@ function Login() {
         </div>
       </form>
 
-      
-       
+
+
 
     </div>
   );

@@ -24,7 +24,6 @@ body {
 }
 .header{
   grid-area: header;
-  background-color: rgb(13, 12, 1);
 }
 .aside{
   grid-area: aside;
