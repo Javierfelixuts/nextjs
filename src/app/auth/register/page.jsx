@@ -28,13 +28,12 @@ function register() {
         if(res.ok){
             router.push('/auth/login')
         }
-        console.log({res})
     })
     
     return (
-        <div className="w-100 bg-slate-200 h-screen md:h-[calc(100vh-7rem)] flex justify-center items-center">
+        <div className="w-100 bg-slate-200 h-screen flex justify-center items-center">
            
-            <form className="bg-orange-400 p-6 rounded" onSubmit={onSubmit}>
+            <form className="bg-white p-6 rounded shadow-sm	" onSubmit={onSubmit}>
            
                 <label htmlFor="username" className="block text-slate-500 mb-2 text-sm">
                     Username <span className="text-red-700">*</span>:
@@ -48,7 +47,7 @@ function register() {
                 })}
                 placeholder="nickname"
 
-                className="p-2 rounded block mb-2 text-slate-300"
+                className="p-2 rounded block mb-2 border-b-2"
                 />
                 {
                     errors.username && (
@@ -67,7 +66,7 @@ function register() {
                 })}
                 placeholder="user@gmail.com"
 
-                className="p-2 rounded block mb-2 text-slate-300"
+                className="p-2 rounded block mb-2 border-b-2"
                 />
                 {
                     errors.email && (
@@ -85,7 +84,7 @@ function register() {
                     }
                 })}
                 placeholder="********"
-                className="p-2 rounded block mb-2 text-slate-300"
+                className="p-2 rounded block mb-2 border-b-2"
                 />
                 {
                     errors.password && (
@@ -104,7 +103,7 @@ function register() {
                     }
                 })}
                 placeholder="********"
-                className="p-2 rounded block mb-2 text-slate-300"
+                className="p-2 rounded block mb-2 border-b-2"
                 />  
                 {
                     errors.confirmPassword && (
@@ -112,8 +111,14 @@ function register() {
                     )
                 }
 
-                <button className="p-3 mt-3 block rounded bg-slate-500"> Register </button>
+                <button className="px-3 py-1 mt-3 block rounded bg-slate-700 text-white"> Register </button>
+
+                <div className="mt-5">
+                    <span className="text-xs">Do you have an account?</span>
+                    <a href="/auth/login" className="text-xs text-blue-400 underline"> Sign In</a>
+                </div>
             </form>
+            
         </div>
     )
 }

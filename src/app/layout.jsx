@@ -1,5 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Loading from "./dashboard/loading";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,11 +19,26 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+const session = await getServerSession(authOptions);
+
+  console.log("session: ", session)
+
   return (
     <html lang="en">
-      
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {!session?.user ? (<>{children}</>) :
+          <div className="grid-container">
+            <Navbar />
+            <Sidebar />
+            <Suspense fallback={<Loading />}>
+              <div className="main">
+                {children}
+              </div>
+            </Suspense>
+          </div>
+        }
+        </body>
     </html>
   );
 }
