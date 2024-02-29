@@ -130,7 +130,7 @@ function Dashboard() {
         <div>
             
             <div className='inline-block'>
-              <label htmlFor="" className='me-2 text-xs'>Selecciona un banco:</label>
+              <label htmlFor="" className='me-2 text-xs'>SELECT A BANK:</label>
               <select className='block peer h-full rounded-[7px] border border-blue-gray-200 p-2 border-x-8 border-white mb-3 shadow-lg' value={selectedOption} name="" id="" onChange={handleChange}>
                 {
                     options?.results?.map(val => <option key={val.name} value={val.name}>{val.name}</option>)
