@@ -22,6 +22,7 @@ async function Sidebar() {
           </>
         ) : (
           <>
+          <div>
             <li>
               <Link href="/dashboard">Banks</Link>
             </li>
@@ -30,6 +31,11 @@ async function Sidebar() {
             </li>
             <li>
               <Link href="/dashboard/accounts">Accounts</Link>
+            </li>
+            </div>
+
+            <li>
+              <Link href="/api/auth/signout">Log out</Link>
             </li>
           </>
         )}
