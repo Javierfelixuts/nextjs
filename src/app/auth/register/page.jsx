@@ -9,6 +9,8 @@ function Register() {
 
         if(data.password !== data.confirmPassword){
             alert("Password doesnt match")
+
+            return;
         }
 
         const res = await fetch('/api/auth/register', {
