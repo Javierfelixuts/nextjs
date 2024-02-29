@@ -121,7 +121,7 @@ function Dashboard() {
 
     
   return (<>
-
+    <h1 className="md:text-center text-lg">Bank catalog</h1>
     <div className='p-4 bg-white text-black w-fit rounded-lg shadow-lg me-4 my-4'>
       BALANCE: $ <span className={kpiBalance < 0 ? "text-red-400" : kpiBalance == 0 ? "": "text-green-600"}> {kpiBalance}</span>
     </div>
