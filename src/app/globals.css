@@ -10,7 +10,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 150px 1fr;
   grid-template-rows: 50px 1fr 50px;
   grid-template-areas:
       'aside header'
@@ -27,7 +27,10 @@ body {
 }
 .aside{
   grid-area: aside;
-  background-color: rgb(206, 205, 224);
+  background-color: rgb(8 8 9);
+}
+.aside ul li:hover {
+  background-color: #f6991c;
 }
 .main{
   grid-area: main;
@@ -40,14 +43,28 @@ body {
 
 @media (max-width: 767px) {
   .grid-container {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-          "header header"
-          "aside main"
-          "footer footer";
+      display: flex;
+      flex-direction: column;
   }
-.chart-content {
-      grid-template-columns: 1fr;
+
+  .aside {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    display: block;
+  }
+  .aside ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .logo{
+    position: absolute;
+    top: -54px;
+    padding: 5px 5px;
+    background: white;
+    border-radius: 17px;
   }
   .overview-content {
       grid-template-columns: 1fr;

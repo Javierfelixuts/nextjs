@@ -1,6 +1,7 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
 function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -35,7 +36,14 @@ function Register() {
         <div className="w-100 bg-slate-200 h-screen flex justify-center items-center">
            
             <form className="bg-white p-6 rounded shadow-sm	" onSubmit={onSubmit}>
-           
+            <Image
+          alt="bankapp"
+          className="mx-auto"
+          src='/icon-192x192.png'
+          height={50}
+          width={50}
+        />
+        <h1 className="text-slate-200 font-bold text-4xl mb-4 text-center m-2">BANKAPP</h1>
                 <label htmlFor="username" className="block text-slate-500 mb-2 text-sm">
                     Username <span className="text-red-700">*</span>:
                 </label>

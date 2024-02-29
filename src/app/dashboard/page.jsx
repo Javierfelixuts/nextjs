@@ -125,7 +125,7 @@ function Dashboard() {
     <div className='p-4 bg-white text-black w-fit rounded-lg shadow-lg me-4 my-4'>
       BALANCE: $ <span className={kpiBalance < 0 ? "text-red-400" : kpiBalance == 0 ? "": "text-green-600"}> {kpiBalance}</span>
     </div>
-    <section className=" flex justify-center items-center">
+    <section className=" block">
 
       { isLoading ? <Loading /> : 
         <div>
@@ -137,7 +137,7 @@ function Dashboard() {
           </select>
 
           <div
-                className="ag-theme-quartz me-4" // applying the grid theme
+                className="ag-theme-quartz me-2" // applying the grid theme
                 style={{ height: 500 }} // the grid will fill the size of the parent container
             >
                 <AgGridReact
@@ -145,14 +145,6 @@ function Dashboard() {
                     columnDefs={colDefs}
                 />
             </div>
-          <div className='flex flex-wrap'>
-            {
-                  options?.results?.map(val => <div key={val.name} className='w-28 p-3 border-indigo-400' onClick={() => getBank(val)}>
-                    <img  className='w-14 border-indigo-400' src={val.icon_logo} alt={val.name} />
-                    <span className='text-xs'>{val.display_name}</span>
-                  </div>)
-            }
-          </div>
         </div>
       }
 

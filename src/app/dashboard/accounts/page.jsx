@@ -45,9 +45,9 @@ function Accounts() {
     }, []);
     return (
         <>
-            <h1>Accounts</h1>
+            <h1 className="md:text-center text-lg">Accounts</h1>
             <div
-                className="ag-theme-quartz me-4" // applying the grid theme
+                className="ag-theme-quartz me-2" // applying the grid theme
                 style={{ height: 500 }} // the grid will fill the size of the parent container
             >
                 <AgGridReact

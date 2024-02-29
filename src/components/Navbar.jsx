@@ -9,15 +9,6 @@ async function Navbar() {
 
   return (
     <nav className=" header flex justify-between items-center text-black px-24 py-3">
-      <Image
-      alt="bankapp"
-      className="mt-5"
-       src='/icon-192x192.png'
-      height={50}
-      width={50} 
-      
-      />
-
       <ul className="flex gap-x-2">
         {!session?.user ? (
           <>
@@ -33,9 +24,7 @@ async function Navbar() {
           </>
         ) : (
           <>
-            <li className="underline">
-              <Link href="/api/auth/signout">Log Out</Link>
-            </li>
+            
           </>
         )}
       </ul>

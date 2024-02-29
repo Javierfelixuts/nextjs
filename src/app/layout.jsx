@@ -32,7 +32,7 @@ const session = await getServerSession(authOptions);
             <Navbar />
             <Sidebar />
             <Suspense fallback={<Loading />}>
-              <div className="main">
+              <div className="main m-2">
                 {children}
               </div>
             </Suspense>
