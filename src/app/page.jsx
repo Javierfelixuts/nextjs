@@ -9,7 +9,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >BANK APP</a>
-
+          <label htmlFor="">click here: </label>
         <a href="/auth/login">Login</a>
     </main>
   );
