@@ -121,20 +121,27 @@ function Dashboard() {
 
     
   return (<>
-    <h1 className="md:text-center text-lg">Bank catalog</h1>
-    <div className='p-4 bg-white text-black w-fit rounded-lg shadow-lg me-4 my-4'>
-      BALANCE: $ <span className={kpiBalance < 0 ? "text-red-400" : kpiBalance == 0 ? "": "text-green-600"}> {kpiBalance}</span>
-    </div>
+    <h1 className="text-slate-600 font-bold text-4xl mb-4 text-center -mt-4">BANK CATALOG</h1>
+
+    
     <section className=" block">
 
       { isLoading ? <Loading /> : 
         <div>
-          <label htmlFor="" className='me-2 text-xs'>Selecciona un banco:</label>
-          <select className='block peer h-full rounded-[7px] border border-blue-gray-200 p-2 border-x-8 border-white mb-3 shadow-lg' value={selectedOption} name="" id="" onChange={handleChange}>
-            {
-                options?.results?.map(val => <option key={val.name} value={val.name}>{val.name}</option>)
-            }
-          </select>
+            
+            <div className='inline-block'>
+              <label htmlFor="" className='me-2 text-xs'>Selecciona un banco:</label>
+              <select className='block peer h-full rounded-[7px] border border-blue-gray-200 p-2 border-x-8 border-white mb-3 shadow-lg' value={selectedOption} name="" id="" onChange={handleChange}>
+                {
+                    options?.results?.map(val => <option key={val.name} value={val.name}>{val.name}</option>)
+                }
+              </select>
+            </div>
+            <div className='inline-block p-4 bg-white text-black w-fit rounded-lg shadow-lg ms-4 my-4'>
+              BALANCE: $ <span className={kpiBalance < 0 ? "text-red-400" : kpiBalance == 0 ? "": "text-green-600"}> {kpiBalance}</span>
+            </div>
+
+
 
           <div
                 className="ag-theme-quartz me-2" // applying the grid theme
