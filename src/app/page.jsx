@@ -9,6 +9,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >BANK APP</a>
+
+        <a href="/auth/login">Login</a>
     </main>
   );
 }
