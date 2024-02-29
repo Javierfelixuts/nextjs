@@ -9,7 +9,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >BANK APP</a>
-          <label htmlFor="">cree una tabla User directamente en vercel para saber si funcionará: </label>
+          <label htmlFor="">cree una tabls: </label>
         <a href="/auth/login">Login</a>
     </main>
   );
