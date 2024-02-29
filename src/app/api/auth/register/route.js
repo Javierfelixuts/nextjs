@@ -5,8 +5,8 @@ import bcrypt from 'bcrypt';
 export async function POST(request) {
     try {
         const data = await request.json()
-
-        const emailFound = await db.user.findUnique({
+        console.log("data: ", data);
+        /* const emailFound = await db.user.findUnique({
             where: {
                 email: data.email
             }
@@ -31,7 +31,7 @@ export async function POST(request) {
                 { status: 400 }
             );
         }
-
+ */
 
 
         data.password = await bcrypt.hash(data.password, 10);
