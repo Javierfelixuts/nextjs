@@ -6,7 +6,7 @@ export async function POST(request) {
     try {
         const data = await request.json()
         console.log("data: ", data);
-        /* const emailFound = await db.user.findUnique({
+        const emailFound = await db.user.findUnique({
             where: {
                 email: data.email
             }
@@ -31,7 +31,6 @@ export async function POST(request) {
                 { status: 400 }
             );
         }
- */
 
 
         data.password = await bcrypt.hash(data.password, 10);
